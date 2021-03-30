@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainViews"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0C96E4"
+    tools:context="com.example.speakup.AppSettings">
+
+    <RelativeLayout
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/applogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/appwraplogo" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mainToolbar"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp">
+
+        <RelativeLayout
+            android:id="@+id/submiain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/textSizeSettingContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/holo_green_dark"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/textSizeNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:tag="1"
+                        android:text="select font size"
+                        android:textSize="16pt" />
+
+                    <LinearLayout
+                        android:id="@+id/smallTVContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textSizeNote"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/smallTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:tag="2"
+                            android:text="small"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/smallSizeSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/mediumTVContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/smallTVContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/mediumTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:tag="3"
+                            android:text="medium"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/mediumSizeSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/largeTVContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/mediumTVContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/largeTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:tag="4"
+                            android:text="large"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/largeSizeSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="true"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/textFontSettingContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textSizeSettingContainer"
+                android:layout_margin="5dp"
+                android:background="@android:color/holo_green_dark"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/submain_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/textFontNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="select font family"
+                        android:textSize="16pt" />
+
+                    <LinearLayout
+                        android:id="@+id/fontArialContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textFontNote"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/arialTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:text="arial"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/fontArialSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="true"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fontComiSansContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fontArialContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/comisansTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:text="comic sans"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/fontComiSansSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fontHelveticaContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fontComiSansContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/helveticaTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:text="helvetica"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/fontHelveticaSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fontTahomaContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fontHelveticaContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tahomaTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:text="tahoma"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/fontTahomaSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fontTrebuchetContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fontTahomaContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/trebuchetTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:text="trebuchet"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/fontTrebuchetSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fontVerdanaContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fontTrebuchetContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/verdanaTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.8"
+                            android:text="verdana"
+                            android:textSize="16pt" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/fontVerdanaSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/themeSettingContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textFontSettingContainer"
+                android:layout_margin="5dp"
+                android:background="@android:color/holo_green_dark"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/textThemeNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="select app theme"
+                        android:textSize="16pt" />
+
+                    <LinearLayout
+                        android:id="@+id/blueThemeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textThemeNote"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/blueThemeTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.5"
+                            android:text="blue"
+                            android:textSize="16pt" />
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/thumb_selector"
+                            app:tint="#0C96E4" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/blueThemeSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"
+                            android:checked="true"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/darkYellowThemeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/blueThemeContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/darkYellowThemeTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.5"
+                            android:text="dark yellow"
+                            android:textSize="16pt" />
+
+                        <ImageView
+                            android:layout_width="72dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/thumb_selector"
+                            app:tint="#F6BB00" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/darkYellowThemeSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/greenThemeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/darkYellowThemeContainer"
+                        android:layout_alignParentStart="true"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/greenThemeTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1.5"
+                            android:text="green"
+                            android:textSize="16pt" />
+
+                        <ImageView
+                            android:layout_width="41dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"
+                            android:src="@drawable/thumb_selector"
+                            app:tint="#1EB742" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/greenThemeSC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:gravity="end"
+                            android:theme="@style/ThemeTypeIOSSwitch"
+                            android:thumb="@drawable/thumb_selector"
+                            android:visibility="visible"
+                            app:track="@drawable/track_selector" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
